@@ -1,0 +1,18 @@
+sudo: false
+language: java
+services: docker
+before_install:
+    - chmod +x .travis/script.sh
+    - echo "MAVEN_OPTS='-Xmx384m'" > ~/.mavenrc
+install:
+    - export PROJ_PATH=`pwd`
+    - export ENTRYPOINT=$PROJ_PATH/.travis/sql
+
+jdk:
+    - oraclejdk8
+
+env:
+    - DB=mariadb:10.2
+    - DB=mariadb:10.2 MAXSCALE_VERSION=2.0.5
+    - DB=mariadb:10.2 MAXSCALE_VERSION=2.1.4
+script: .travis/script.sh

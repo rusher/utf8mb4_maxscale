@@ -1,0 +1,22 @@
+version: '2'
+services:
+  maxscale:
+    depends_on:
+      - db
+    ports:
+      - 4007:4007
+      - 4008:4008
+    build:
+      context: .
+      dockerfile: maxscale/Dockerfile
+  db:
+    image: $DB
+    command: --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci --bind-address=0.0.0.0
+    ports:
+      - 3305:3306
+    volumes:
+      - $ENTRYPOINT:/docker-entrypoint-initdb.d
+
+    environment:
+      MYSQL_DATABASE: testj
+      MYSQL_ALLOW_EMPTY_PASSWORD: 1
