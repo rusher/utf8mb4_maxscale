@@ -1,5 +1,4 @@
-FROM asosso/maxscale
-
+FROM centos:7
 RUN yum -y install MariaDB-client
 
 COPY maxscale/docker-entrypoint.sh /
