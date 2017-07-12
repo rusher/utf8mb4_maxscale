@@ -1,4 +1,4 @@
-FROM asosso/maxscale:$MAXSCALE_VERSION
+FROM asosso/maxscale
 
 RUN yum -y install MariaDB-client
 
