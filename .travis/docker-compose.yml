@@ -5,6 +5,7 @@ services:
       - db
     ports:
       - 4006:4006
+      - 4007:4007
       - 4008:4008
     build:
       context: .
