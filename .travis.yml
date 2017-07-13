@@ -7,7 +7,8 @@ before_install:
 install:
     - export PROJ_PATH=`pwd`
     - export ENTRYPOINT=$PROJ_PATH/.travis/sql
-
+    #default
+    - export MAXSCALE_VERSION=2.1.4
 jdk:
     - oraclejdk8
 
