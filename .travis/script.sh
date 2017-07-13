@@ -17,7 +17,7 @@ fi
 docker-compose -f .travis/docker-compose.yml build
 docker-compose -f .travis/docker-compose.yml up -d
 
-mysql=( mysql --protocol=tcp -ubob -h127.0.0.1 --port=4006 )
+mysql=( mysql --protocol=tcp -ubob -h127.0.0.1 --port=4007 )
 
 for i in {30..0}; do
     if echo 'SELECT 1' | "${mysql[@]}" &> /dev/null; then

@@ -14,10 +14,11 @@ RUN yum -y install maxscale-$MAXSCALE_VERSION MariaDB-client \
     && rm -rf /tmp/*
 
 COPY maxscale/docker-entrypoint.sh /
-
-RUN chmod 777 /docker-entrypoint.sh
 RUN chmod 777 /etc/maxscale.cnf
+COPY maxscale/maxscale.cnf /etc/
+RUN chmod 777 /docker-entrypoint.sh
 
-EXPOSE 4006 4008
+
+EXPOSE 4006 4007 4008
 
 ENTRYPOINT ["/docker-entrypoint.sh"]
