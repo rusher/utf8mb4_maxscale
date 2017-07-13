@@ -17,8 +17,8 @@ services:
     ports:
       - 3305:3306
     volumes:
-#      - $ENTRYPOINT:/docker-entrypoint-initdb.d
-      - C:/projects/mariadb/utf8mb4_maxscale/.travis/sql:/docker-entrypoint-initdb.d
+      - $ENTRYPOINT:/docker-entrypoint-initdb.d
+#      - C:/projects/mariadb/utf8mb4_maxscale/.travis/sql:/docker-entrypoint-initdb.d
 
     environment:
       MYSQL_DATABASE: testj
