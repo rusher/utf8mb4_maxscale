@@ -74,7 +74,7 @@ localhost_match_wildcard_host=1
 [Write Service]
 type=service
 router=readconnroute
-servers=db
+servers=server1
 user=boby
 passwd=hey
 router_options=master
