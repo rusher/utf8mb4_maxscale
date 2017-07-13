@@ -17,6 +17,6 @@ RUN chmod 777 /docker-entrypoint.sh
 RUN chmod 777 /etc/maxscale.cnf
 
 # We expose our set Listener Ports
-EXPOSE 4006 4007 4008 4442 6603
+EXPOSE 4006 4008
 
 ENTRYPOINT ["/docker-entrypoint.sh"]
