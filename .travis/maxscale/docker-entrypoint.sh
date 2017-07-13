@@ -19,7 +19,7 @@ tail -500 /etc/maxscale.cnf
 
 echo 'creating configuration done'
 
-sleep 5
+sleep 15
 
 #################################################################################################
 # wait for db availability for 30s
@@ -31,7 +31,7 @@ for j in {1..0}; do
             break
         fi
         echo 'DB init process in progress...'
-        sleep 3
+        sleep 1
     done
 
     echo 'use test2' | "${mysql[@]}"
