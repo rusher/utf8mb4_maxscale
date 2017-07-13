@@ -1,3 +1,4 @@
+
 CREATE USER 'bob'@'%';
 GRANT ALL ON *.* TO 'bob'@'%' with grant option;
 

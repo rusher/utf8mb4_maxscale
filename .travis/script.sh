@@ -5,6 +5,15 @@ set -e
 
 cmd=( mvn clean test )
 
+if [ -n "$MAXSCALE_VERSION" ]
+then
+    #maxscale version is set
+    echo "$MAXSCALE_VERSION"
+else
+    #default version
+    export MAXSCALE_VERSION=2.1.4
+fi
+
 docker-compose -f .travis/docker-compose.yml build
 docker-compose -f .travis/docker-compose.yml up -d
 
