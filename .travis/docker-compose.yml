@@ -9,8 +9,8 @@ services:
     build:
       context: .
       dockerfile: maxscale/Dockerfile
-    environment:
-      MAXSCALE_VERSION: $MAXSCALE_VERSION
+      args:
+        MAXSCALE_VERSION: $MAXSCALE_VERSION
   db:
     image: $DB
     command: --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci --bind-address=0.0.0.0
