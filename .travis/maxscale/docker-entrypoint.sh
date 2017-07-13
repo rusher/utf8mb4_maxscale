@@ -15,8 +15,6 @@ sed -i 's|port=4008|port=4008\naddress=127.0.0.1|g' /etc/maxscale.cnf
 sed -i 's|port=4006|port=4006\naddress=127.0.0.1|g' /etc/maxscale.cnf
 
 
-tail -500 /etc/maxscale.cnf
-
 echo 'creating configuration done'
 
 sleep 15
@@ -43,11 +41,13 @@ done
 
 echo 'maxscale launching ...'
 
+tail -n 500 /etc/maxscale.cnf
+
 #ls -lrt /usr/bin/
 #systemctl start maxscale.service
 /usr/bin/maxscale --nodaemon
 
 cd /var/log/maxscale
 ls -lrt
-tail -500 /var/log/maxscale/maxscale.log
+tail -n     500 /var/log/maxscale/maxscale.log
 #"$@"
